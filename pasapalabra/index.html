@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Educa Covid - Pasa Palabra</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Educa Covid - Pasa Palabras">
+    <meta name="author" content="Ariel Hernández Friz">
+    
+    
+    <!-- personal heart icon -->
+    <!-- <link rel="shortcut icon" href="./img/heart-favicon.png"> -->
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+    <link href="../style.css" rel="stylesheet">
+
+    <!--reset layout with normalize.min.css-->
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+    <!--animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- main CSS -->
+    <link href="stylesheets/index.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  
+    <!-- Barra de cabecera -->
+    <div class="container-fluid py-2 bg-header">
+      <div class="row">
+        <div class="col"><a class="link udec" href=""><img src="../img/udec.png" alt=""></a><a class="link facu" href=""><img src="../img/fac.png" alt=""></a></div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <!-- Fin Barra de cabecera -->
+
+    <div id="container" class="container">
+      <div id="container-left">
+        <div id="" style="padding-top: 50px;">
+          <a style="font-size: 30px;margin: 50px 0;font-weight: 700;color: #1a237e;" href="http://152.74.151.33/~ahernandez/educacovid/" title="Volver">
+            <i class="bi bi-arrow-left"></i>
+          </a>
+        </div>
+        <div class="container-left-circle">
+          <div id="a" class="circle">A</div>
+          <div id="b" class="circle">B</div>
+          <div id="c" class="circle">C</div>
+          <div id="d" class="circle">D</div>
+          <div id="e" class="circle">E</div>
+          <div id="f" class="circle">F</div>
+          <div id="g" class="circle">G</div>
+          <div id="h" class="circle">H</div>
+          <div id="i" class="circle">I</div>
+          <div id="j" class="circle">J</div>
+          <div id="k" class="circle">K</div>
+          <div id="l" class="circle">L</div>
+          <div id="m" class="circle">M</div>
+          <div id="n" class="circle">N</div>
+          <div id="o" class="circle">O</div>
+          <div id="p" class="circle">P</div>
+          <div id="q" class="circle">Q</div>
+          <div id="r" class="circle">R</div>
+          <div id="s" class="circle">S</div>
+          <div id="t" class="circle">T</div>
+          <div id="u" class="circle">U</div>
+          <div id="v" class="circle">V</div>
+          <div id="w" class="circle">W</div>
+          <div id="x" class="circle">X</div>
+          <div id="y" class="circle">Y</div>
+          <div id="z" class="circle">Z</div>
+        </div>
+        <div id='container-left-counters'>
+          <div id="score">0</div>
+          <div id="timer">180</div>
+          <br>
+          <br>
+        </div>
+        
+        <audio class="audio">
+          <source type="audio/mp3" src="./sounds/flukeout.github.io/coin.mp3">
+        </audio>
+        <audio class="audio loud">
+          <source type="audio/mp3" src="./sounds/flukeout.github.io/bump.mp3">
+        </audio>
+        <audio class="audio low">
+          <source type="audio/mp3" src="./sounds/sonidosmp3gratis.com/cancel-game.mp3">
+        </audio>
+        <audio class="audio low">
+          <source type="audio/mp3" src="./sounds/sonidosmp3gratis.com/win-game.mp3">
+        </audio>
+      </div>
+      <div id="container-right">
+          <h1></h1>
+          <h1 id="participante"></h1>
+        <div id="container-right-rules">
+          <div>
+            <h1>Bienvenido al juego Pasapalabra</h1>
+          
+            <div id="msn-requerido"></div>
+            <div id="msn-text-min"></div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="name"  name="user_name" maxlength="20"  required placeholder="Nombre" autocomplete="off">
+              <label for="name">Nombre</label>
+            </div>
+     
+            <div id="msn-file"></div>
+            <div class="input-group">
+              <input type="file" class="form-control"id="file-input" accept=".txt" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+            </div>
+            <br>
+            <br>
+            <button id="play-game-button">COMENZAR</button>
+            
+          </div>
+        </div>
+        <div id="container-right-game">
+          <div>
+            <div id='container-right-game-questions'>
+              <p id="question"></p>
+            </div>
+            <input type="text" id="answer" name="answer" placeholder="Respuesta">
+            <div id='container-right-game-buttons'>
+              <button title="Responder" class="transition-3" id="submit-button">Responder</button>
+              <button title="Pasapalabra" class="transition-3" id="next-button">Pasapalabra</button>
+              <div class="transition-3" id="pausa" title="Pausar"><i class='bi bi-pause-btn'></i> PAUSAR</div>
+              <button title="Finalizar" class="transition-3" id="end-button">Finalizar</button>
+              
+            </div>
+            
+          </div>
+        </div>
+        <div id="container-right-win">
+          <div class="container-right-title">
+          <h1>Fin del juego</h1>
+            <h1></h1>
+          </div>
+          <div>
+            <h2>Adivinaste <span class="guessed-words"></span> palabras y fallaste <span class="failed-words"></span>.</h2>
+          </div>
+          <div>
+            <h2>¡Anotaste <span class="final-score"></span> puntos!</h2>
+          </div>
+          <div style="padding: 30px 0 0px;">
+            <button class="play-again-button">Juega de nuevo</button>
+            <button id="ranking-button">Ranking</button>
+          </div>
+        </div>
+        <div id="container-right-ranking">
+          <h1><u>Ranking</u></h1>
+          <table id="ranking-table">
+            <tr>
+              <td><b>Posición</b></td>
+              <td><b>Nombre</b></td>
+              <td><b>Puntos</b></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td class="ranking-name">--</td>
+              <td class="ranking-points">--</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td class="ranking-name">--</td>
+              <td class="ranking-points">--</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td class="ranking-name">--</td>
+              <td class="ranking-points">--</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td class="ranking-name">--</td>
+              <td class="ranking-points">--</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td class="ranking-name">--</td>
+              <td class="ranking-points">--</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td class="ranking-name">--</td>
+              <td class="ranking-points">--</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td class="ranking-name">--</td>
+              <td class="ranking-points">--</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td class="ranking-name">--</td>
+              <td class="ranking-points">--</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td class="ranking-name">--</td>
+              <td class="ranking-points">--</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td class="ranking-name">--</td>
+              <td class="ranking-points">--</td>
+            </tr>
+          </table>
+          <div id="botones-ranking">
+            <button class="play-again-button">Volver a Jugar</button> <button id="btnExportar" class="">Exportar</button>
+          </div>
+        </div>
+        <div id="container-right-cancelGame">
+        
+          <div class="container-right-title">
+            <h1>Cancelaste el juego</h1>
+            <h1></h1><!-- Nombre -->
+          </div>
+          <div>
+            <h2>Adivinaste <span class="guessed-words"></span> palabras y fallaste <span class="failed-words"></span>.</h2>
+          </div>
+          <div>
+            <h2>Anotaste <span class="final-score"></span> puntos</h2>
+            <h2>Pero su puntuación no se puede incluir en la clasificación.</h2>
+          </div>
+          <div>
+            <button class="play-again-button">Jugar de nuevo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+  <script src="../ruleta/js/libs_xlsx/xlsx.full.min.js"></script>
+  <script src="../ruleta/js/libs_xlsx/FileSaver.min.js"></script>
+  <script src="../ruleta/js/libs_xlsx/tableexport.min.js"></script>
+  <!-- main JavaScript -->
+  <script type="text/javascript" src="src/questions-helper.js"></script>
+  <script type="text/javascript" src="src/dom-helper.js"></script>
+  <script type="text/javascript" src="src/index.js"></script>
+</html>

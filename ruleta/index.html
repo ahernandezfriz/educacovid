@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>Educa Covid - Ruleta</title>
+    <meta charset="utf-8">
+    <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Educa Covid - Ruleta">
+    <meta name="author" content="Ariel Hernández Friz">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <script src='js/Winwheel.min.js'></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>   
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+    <body>
+		
+  <!-- Barra de cabecera -->
+  <div class="container-fluid py-2 bg-header">
+    <div class="row">
+      <div class="col"><a class="link udec" href=""><img src="../img/udec.png" alt=""></a><a class="link facu" href=""><img src="../img/fac.png" alt=""></a></div>
+      <div class="col"></div>
+    </div>
+	</div>
+  <!-- Fin Barra de cabecera -->
+  
+		<div class="container">
+			<div class="row py-5 gx-5">
+          <div id="">
+              <a style="font-size: 30px;margin: 50px 0;font-weight: 700;color: #1a237e;" href="http://152.74.151.33/~ahernandez/educacovid/" title="Volver">
+                <i class="bi bi-arrow-left"></i>
+              </a>
+            </div>
+				
+				<div class="col-6">
+					<div class="p-3" style="position: relative; width: 100%;float: left;">
+              <div id="container-wheel"> 
+                <div class="the_wheel">
+                  <canvas id="canvas" width="250" height="332">
+                    <p>Lo sentimos, su navegador no es compatible con lienzo. Intente con otro.</p>
+                  </canvas>
+                </div>
+              </div>
+              <div id="controles">
+                <div id="cont-btn-girar">
+                  <button id="spin_button"  disabled="" title="Girar ruleta"><i class="bi bi-arrow-repeat"></i></button>
+                  <strong>Girar</strong>
+                </div>
+                <!--<div id="cont-btn-finalizar">
+                  <button id="btn-resultados" title="Ver Ranking"><i class="bi bi-flag"></i></button>
+                  <strong>Finalizar</strong>
+                </div>-->
+              </div>
+          
+              <!-- #container-grupos -->
+              <div id="container-crear-grupos">
+                Cuantos Grupos 
+                <input name="G1" class="" type="number" min="2" max="20" value="2" id="input_crear_grupo" />
+                <button id="btn-crear-grupos">Crear Grupos</button>
+              </div>
+              <!-- FIN #container-grupos -->
+
+					</div>
+				</div>
+				
+
+				<div class="col-6" >
+				  
+					<div id="container-preguntas">
+						<div class="p-3"> 
+
+                
+							<div class="power_controls">
+								<input type="file" value="" id="file-input" accept=".txt" />
+								<div class="msn-file-input">subir archivo .txt con listado de preguntas.<br>
+								Máximo 10 preguntas</div>
+								</div>
+                    
+								<div id="listado-preguntas"> 
+                  <h3 class="title-pre">Pregunta</h3>
+                  <ul id="ulListado-op"></ul>
+									<ul id="ulListado"></ul>
+								</div>
+							</div>
+						</div>
+
+						<div id="container-resultados">
+							<h3>Ranking de Puntajes</h3>
+							<div class="container-table">
+							<table id="tabla-ranking" class="table table-striped table-ranking">
+							<tr>
+								<th scope="col">Lugar</th>
+								<th scope="col">Grupo</th>
+								<th scope="col">Puntajes</th>
+							  </tr>
+							</table>
+          <br>
+          <input type="button" id="volver-juego" value="volver a jugar" name="">&nbsp;&nbsp;<button id="btnExportar">Exportar</button>&nbsp;&nbsp;<input type="button" id="salir-ruleta" value="Salir" name="">
+          </div>
+				</div>
+			</div>
+			
+				<div class="col-12">
+					<div id="container-grupos">
+						<h2>Puntaje por Grupos</h2>
+						<table id="tabla-grupos" class="table" cellpadding="0" cellspacing="0" border="0">
+            </table>
+            
+            <div id="cont-btn-finalizar">
+              <button id="btn-resultados" title="Ver Ranking"><i class="bi bi-flag"></i>  Finalizar</button>
+             
+            </div>
+					</div>
+				</div>		
+		</div>
+	</div>
+
+  <script src="js/script.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="./js/libs_xlsx/xlsx.full.min.js"></script>
+  <script src="./js/libs_xlsx/FileSaver.min.js"></script>
+  <script src="./js/libs_xlsx/tableexport.min.js"></script>
+  </body>
+</html>
