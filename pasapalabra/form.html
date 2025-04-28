@@ -28,47 +28,48 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@300;400;600&display=swap" rel="stylesheet">
-  </head>
-  <style>
 
-    .letter-row {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-        gap: 10px;
-    }
-    .letter-label {
-        font-weight: bold;
-        width: 30px;
-    }
-    input, textarea {
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-    .word-input {
-        width: 150px;
-    }
-    .question-input {
-        flex: 1;
-        min-height: 40px;
-        width: 300px;
-    }
-    #saveAll {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        padding: 12px 20px;
-        font-size: 16px;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-top: 20px;
-        width: 100%;
-    }
-    #saveAll:hover {
-        background-color: #45a049;
-    }
-  </style>
+    <style>
+
+      .letter-row {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          gap: 10px;
+      }
+      .letter-label {
+          font-weight: bold;
+          width: 30px;
+      }
+      input, textarea {
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+      .word-input {
+          width: 150px;
+      }
+      .question-input {
+          flex: 1;
+          min-height: 40px;
+          width: 300px;
+      }
+      #saveAll {
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 12px 20px;
+          font-size: 16px;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-top: 20px;
+          width: 100%;
+      }
+      #saveAll:hover {
+          background-color: #45a049;
+      }
+    </style>
+  </head>
   <body>
   
     <!-- Barra de cabecera -->
@@ -139,39 +140,14 @@
           <h1></h1>
           <h1 id="participante"></h1>
         <div id="container-right-rules">
-          <h1></h1>
-          <h1 id="participante"></h1>
-        <div id="container-right-rules">
           
-        <!-- ACA SE GENERAN LOS INPUT -->
-        <div id="lettersContainer">
-            <!-- Las letras se generarán aquí -->
-        </div>
-        
-        <button id="play-game-button">Guardar todo el abecedario</button>
+         <!-- ACA SE GENERAN LOS INPUT -->
+         <div id="lettersContainer">
+          <!-- Las letras se generarán aquí -->
+      </div>
+      
+      <button id="play-game-button">Guardar todo el abecedario</button>
 
-        </div>
-          <!--
-          <div>
-            <h1>Bienvenido al juego Pasapalabra</h1>
-          
-            <div id="msn-requerido"></div>
-            <div id="msn-text-min"></div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="name"  name="user_name" maxlength="20"  required placeholder="Nombre" autocomplete="off">
-              <label for="name">Nombre</label>
-            </div>
-     
-            <div id="msn-file"></div>
-            <div class="input-group">
-              <input type="file" class="form-control"id="file-input" accept=".txt" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-            </div>
-            <br>
-            <br>
-            <button id="play-game-button">COMENZAR</button>
-            
-          </div>
-        -->
         </div>
         <div id="container-right-game">
           <div>
@@ -184,11 +160,10 @@
               <button title="Pasapalabra" class="transition-3" id="next-button">Pasapalabra</button>
               <div class="transition-3" id="pausa" title="Pausar"><i class='bi bi-pause-btn'></i> PAUSAR</div>
               <button title="Finalizar" class="transition-3" id="end-button">Finalizar</button>
-              
             </div>
-            
           </div>
         </div>
+
         <div id="container-right-win">
           <div class="container-right-title">
           <h1>Fin del juego</h1>
@@ -205,6 +180,7 @@
             <button id="ranking-button">Ranking</button>
           </div>
         </div>
+        
         <div id="container-right-ranking">
           <h1><u>Ranking</u></h1>
           <table id="ranking-table">
@@ -289,12 +265,13 @@
     </div>
     
   </body>
-  <script src="../ruleta/js/libs_xlsx/xlsx.full.min.js"></script>
+<!--<script src="../ruleta/js/libs_xlsx/xlsx.full.min.js"></script>
   <script src="../ruleta/js/libs_xlsx/FileSaver.min.js"></script>
-  <script src="../ruleta/js/libs_xlsx/tableexport.min.js"></script>
+  <script src="../ruleta/js/libs_xlsx/tableexport.min.js"></script>-->
   <!-- main JavaScript -->
-  <!--<script type="text/javascript" src="src/questions-helper.js"></script>-->
+  <!-- <script type="text/javascript" src="src/questions-helper.js"></script>-->
   <script type="text/javascript" src="src/inputs.js"></script>
   <script type="text/javascript" src="src/dom-helper.js"></script>
   <script type="text/javascript" src="src/index.js"></script>
+
 </html>

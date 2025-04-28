@@ -10,9 +10,12 @@ let click = false;
 
 
 
-// función que cambia de pantalla al pulsar el botón de Play Game, para empezar el juego y prepara el juego para jugar, mostrando las preguntas, timer, nombre de usuario.
+/**
+ *  función que cambia de pantalla al pulsar el botón de Play Game, 
+ * para empezar el juego y prepara el juego para jugar, 
+ * mostrando las preguntas, timer, nombre de usuario. */
 function startGame() {
-  if(inputName.val().length == 0){
+  /*if(inputName.val().length == 0){
     $("#msn-requerido").html("Ingrese su nombre");
     return;
   }
@@ -34,10 +37,16 @@ function startGame() {
   }else if(nComas != 2){
     $("#msn-file").html("Revise su archivo, puede estar mal configurado");
     return;
+  }*/
+
+  if (!window.randomQuestions || window.randomQuestions.length !== 26) {
+    alert("Debes completar las 26 letras antes de empezar.");
+    return;
   }
+
   startGameDom();
-  setUserName();
-  setAvatar();
+  //setUserName();
+  //setAvatar();
   setTimer();
   //setRandomArray();
   showQuestion(i);
@@ -50,10 +59,11 @@ function validarCamposInicio(){
 
 
 // función que guarda todas las respuestas del usuario en el array general donde están almacenadas las preguntas.
-// cada vez que el usuario inserte su respuesta y presione enter o pulse el botón, se comprobará si la respuesta es correcta, la letra actual dejará de parpadear y se mostrará la siguiente pregunta.
+// cada vez que el usuario inserte su respuesta y presione enter o pulse el botón, 
+// se comprobará si la respuesta es correcta, la letra actual dejará de parpadear y se mostrará la siguiente pregunta.
 function validateInput() {
   if(i < 26) {
-    randomQuestions[i].userAnswer = getInputAnswerDom();//recoge valor de respuesta
+    randomQuestions[i].userAnswer = getInputAnswerDom(); //recoge valor de respuesta ingresada por el jugador
     distoggleLetter(i);
     checkAnswer(i);
     i++;
@@ -62,14 +72,17 @@ function validateInput() {
 }
 
 
-
-//función que comprueba si la respuesta es correcta, cambiando la letra del rosco de color rojo si es incorrecta y reproduciendo un sonido de fallo, de color verde si es correcta y reproduciendo un sonido de acierto, o dejándola igual si se pasa a la siguiente.
+/* 
+  Checkear Respuesta
+-------------------------------------------------------------------- */
+// función que comprueba si la respuesta es correcta, 
+// cambiando la letra del rosco de color rojo si es incorrecta y reproduciendo un sonido de fallo, 
+// de color verde si es correcta y reproduciendo un sonido de acierto, o dejándola igual si se pasa a la siguiente.
 function checkAnswer(i) {
-  if(randomQuestions[i].userAnswer.toUpperCase() ===  // si acierta
-  randomQuestions[i].answer.toUpperCase()) {
+  if(randomQuestions[i].userAnswer.toUpperCase() === randomQuestions[i].answer.toUpperCase()) {
     randomQuestions[i].status = true; // marca pregunta como acertada
     totalWords--; // disminuye las letras pendientes de jugar
-    answerIsCorrectDom(i)
+    answerIsCorrectDom(i);
     setPoints(); //actualiza puntos por pantalla
   } else { // si falla
     randomQuestions[i].status = false; // marca pregunta como fallida
@@ -199,6 +212,7 @@ function setRanking(){
     ranking.pop()
   }
 }
+
 
 playGameDomEvent(startGame) //cuando se pulsa enter o se presiona el botón.
 

@@ -37,11 +37,19 @@ function leerArchivo(e) {
             for(var linea of lineas) {
                 // separa por coma y elimina los espacios en blanco
                 letra = linea.split(',').map(item => item.trim());
-                randomQuestions.push({letter:letra[0], answer:letra[1], status: 0, question:letra[2]});
+                randomQuestions.push({
+                    letter:letra[0], 
+                    answer:letra[1], 
+                    status: 0, 
+                    question:letra[2]
+                });
             }           
         }
     }
     lector.readAsText(archivo);  
+
+    console.log("Es un " +  typeof(randomQuestions));
+    console.log(randomQuestions);
 }
 fileInput = document.getElementById('file-input');
 fileInput.addEventListener('change', leerArchivo, false);
